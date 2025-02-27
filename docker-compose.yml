@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Main application service
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"  # Streamlit web interface
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/moodreads
+      - CLAUDE_API_KEY=${CLAUDE_API_KEY}
+      - JWT_SECRET=${JWT_SECRET}
+    volumes:
+      - ./src:/app/src  # Mount source code for development
+      - ./data:/app/data  # Persistent data storage
+    depends_on:
+      - mongodb
+    networks:
+      - moodreads_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"  # MongoDB port
+    volumes:
+      - mongodb_data:/data/db  # Persistent storage for MongoDB
+      - mongodb_config:/data/configdb  # MongoDB configuration
+    environment:
+      - MONGO_INITDB_DATABASE=moodreads
+    networks:
+      - moodreads_net
+    restart: unless-stopped
+    command: ["mongod", "--bind_ip_all"]  # Allow connections from other containers
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# Named volumes for persistent data
+volumes:
+  mongodb_data:  # Persistent MongoDB data
+    driver: local
+  mongodb_config:  # Persistent MongoDB config
+    driver: local
+
+# Custom network for service isolation
+networks:
+  moodreads_net:
+    driver: bridge 
