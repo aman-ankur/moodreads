@@ -1,0 +1,130 @@
+name: Moodreads CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Test and Lint
+    runs-on: ubuntu-latest
+
+    services:
+      # Set up MongoDB service container
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd mongosh
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'pip'  # Enable pip caching
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install flake8 pytest pytest-cov  # Install test dependencies
+        pip install -e .  # Install package in development mode
+
+    - name: Run linting
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
+
+    - name: Run tests with coverage
+      env:
+        CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+        MONGODB_URI: mongodb://localhost:27017/moodreads_test
+        JWT_SECRET: test_secret_key
+      run: |
+        pytest --cov=moodreads --cov-report=xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        fail_ci_if_error: true
+
+  docker:
+    name: Build and Test Docker
+    runs-on: ubuntu-latest
+    needs: test  # Only run after tests pass
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: false  # Don't push to registry
+        tags: moodreads:test
+        cache-from: type=gha  # Use GitHub Actions cache
+        cache-to: type=gha,mode=max
+
+    - name: Test Docker image
+      run: |
+        # Start containers
+        docker-compose up -d
+        
+        # Wait for services to be ready
+        sleep 10
+        
+        # Check if services are running
+        docker-compose ps
+        
+        # Run basic health check
+        curl -f http://localhost:8501 || exit 1
+        
+        # Cleanup
+        docker-compose down
+
+  deploy:
+    name: Deploy (if on main)
+    runs-on: ubuntu-latest
+    needs: [test, docker]
+    if: github.ref == 'refs/heads/main'  # Only run on main branch
+
+    steps:
+    - name: Deploy notification
+      run: |
+        echo "Tests passed and Docker image built successfully."
+        echo "Ready for deployment!"
+        # Add actual deployment steps here
+
+    - name: Notify on failure
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: 'Deployment failed',
+            body: 'Deployment workflow failed. Please check the logs.'
+          })
+
+env:
+  # Global environment variables
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1 
