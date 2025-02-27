@@ -1,0 +1,664 @@
+/* Base layout */
+.stApp {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+}
+
+/* Theme variables */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --text-muted: #666666;
+    --heading-color: #222222;
+    --tab-active-color: #ffffff;
+    --tab-inactive-color: #333333;
+}
+
+[data-theme="dark"] {
+    --primary-color: #66BB6A;
+    --secondary-color: #42A5F5;
+    --background-color: #1E1E1E;
+    --text-color: #E0E0E0;
+    --card-background: #2D2D2D;
+    --border-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --text-muted: #B0B0B0;
+    --heading-color: #FFFFFF;
+    --tab-active-color: #FFFFFF;
+    --tab-inactive-color: #E0E0E0;
+}
+
+/* Base styles */
+.stApp {
+    color: var(--text-color) !important;
+    background-color: var(--background-color) !important;
+}
+
+/* Ensure text visibility in all components */
+.stMarkdown, 
+.stText, 
+.stTextArea textarea,
+.stSelectbox,
+.stRadio label,
+.stCheckbox label {
+    color: var(--text-color) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color) !important;
+}
+
+/* Tab visibility fixes */
+.stTabs [data-baseweb="tab"] {
+    color: var(--tab-inactive-color) !important;
+    background-color: transparent !important;
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    color: var(--tab-active-color) !important;
+    background-color: var(--primary-color) !important;
+}
+
+/* Select box and dropdown fixes */
+.stSelectbox > div > div {
+    color: var(--text-color) !important;
+    background-color: var(--card-background) !important;
+}
+
+/* Radio button fixes */
+.stRadio > label {
+    color: var(--text-color) !important;
+}
+
+.stRadio > div[role="radiogroup"] > label {
+    color: var(--text-color) !important;
+}
+
+/* Slider label fixes */
+.stSlider > label {
+    color: var(--text-color) !important;
+}
+
+/* Book card text visibility */
+.book-card {
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+.book-title {
+    color: var(--heading-color) !important;
+}
+
+.book-author {
+    color: var(--text-muted);
+}
+
+.book-description {
+    color: var(--text-color);
+}
+
+.book-metadata {
+    color: var(--text-muted);
+}
+
+/* Example card visibility */
+.example-card {
+    color: var(--text-color) !important;
+    background-color: var(--card-background);
+}
+
+/* Feature card visibility */
+.feature-card {
+    color: var(--text-color);
+    background-color: var(--card-background);
+}
+
+.feature-card h3 {
+    color: var(--heading-color) !important;
+}
+
+.feature-card p {
+    color: var(--text-color);
+}
+
+/* Search box visibility */
+.search-box {
+    background-color: var(--card-background);
+}
+
+.search-box textarea {
+    color: var(--text-color) !important;
+}
+
+/* Ensure placeholder text is visible but slightly muted */
+::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.7 !important;
+}
+
+/* Ensure selectbox options are visible */
+.stSelectbox ul {
+    background-color: var(--card-background) !important;
+}
+
+.stSelectbox ul li {
+    color: var(--text-color) !important;
+}
+
+/* Ensure slider values are visible */
+.stSlider .stMarkdown p {
+    color: var(--text-color) !important;
+}
+
+.book-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+.prompt-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.prompt-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+.prompt-category {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.prompt-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-title {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.book-author {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.book-description {
+    color: var(--text-color);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+.book-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.match-score {
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    background: rgba(23, 185, 120, 0.1);
+    border-radius: 4px;
+}
+
+.rating {
+    color: #ff9a3c;
+    padding: 0.2rem 0.5rem;
+    background: rgba(255, 154, 60, 0.1);
+    border-radius: 4px;
+}
+
+.genres {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.search-box {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: var(--card-background);
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: var(--text-color);
+    margin: 2rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.emotion-chart {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    border: 1px solid var(--border-color);
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 4rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-description {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+/* Quick action section */
+.quick-action {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.quick-action h2 {
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.quick-action p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Feature cards */
+.feature-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Example queries */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.example-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.4;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all 0.2s ease;
+}
+
+.example-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    border-color: var(--primary-color);
+}
+
+/* Section titles */
+.section-title {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 3rem 0 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Button styling */
+.stButton > button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    padding: 0.75rem 2rem !important;
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 0 2px 4px var(--shadow-color) !important;
+    transition: all 0.2s ease !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px var(--shadow-color) !important;
+    opacity: 0.9 !important;
+}
+
+/* Tabs styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 1rem;
+    background-color: var(--card-background);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: var(--text-color) !important;
+    background-color: transparent !important;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Form elements */
+.stTextArea > div {
+    background-color: var(--card-background) !important;
+    color: var(--text-color) !important;
+}
+
+.stTextArea textarea {
+    color: var(--text-color) !important;
+}
+
+.stSelectbox > div {
+    background-color: var(--card-background) !important;
+    color: var(--text-color) !important;
+}
+
+/* Book cards */
+.book-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.book-title {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.book-author {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.book-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.match-score {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 4px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Search container */
+.search-container {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.search-container h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Style the text area */
+.stTextArea > div[data-baseweb="textarea"] {
+    background-color: var(--card-background) !important;
+    border: 2px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.stTextArea textarea {
+    color: var(--text-color) !important;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+}
+
+.stTextArea textarea::placeholder {
+    color: var(--text-color) !important;
+    opacity: 0.6 !important;
+}
+
+/* Warning message */
+.stAlert {
+    background-color: rgba(255, 152, 0, 0.1) !important;
+    color: var(--text-color) !important;
+    border-color: #ff9800 !important;
+    border-radius: 8px !important;
+    margin: 1rem 0 !important;
+}
+
+/* Content sections */
+.content-section {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.content-section h3 {
+    color: var(--heading-color) !important;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    color: var(--text-color) !important;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Override Streamlit default text colors */
+.stMarkdown div[data-testid="stMarkdownContainer"] > p {
+    color: var(--text-color) !important;
+}
+
+/* Ensure radio buttons and labels are visible */
+.stRadio > div[role="radiogroup"] {
+    background-color: var(--card-background) !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.stRadio > div[role="radiogroup"] > label > div {
+    color: var(--text-color) !important;
+}
+
+/* Ensure slider text is visible */
+.stSlider > div[data-baseweb="slider"] > div {
+    background-color: var(--primary-color) !important;
+}
+
+.stSlider .stMarkdown {
+    color: var(--text-color) !important;
+}
+
+/* Ensure select box text and options are visible */
+div[data-baseweb="select"] > div {
+    background-color: var(--card-background) !important;
+    color: var(--text-color) !important;
+}
+
+div[data-baseweb="select"] > div > div {
+    color: var(--text-color) !important;
+}
+
+div[data-baseweb="popover"] > div {
+    background-color: var(--card-background) !important;
+}
+
+div[data-baseweb="menu"] > div > div {
+    color: var(--text-color) !important;
+}
+
+/* Ensure chart text is visible */
+.js-plotly-plot .plotly .gtitle {
+    fill: var(--text-color) !important;
+}
+
+.js-plotly-plot .plotly .xtitle, 
+.js-plotly-plot .plotly .ytitle {
+    fill: var(--text-color) !important;
+}
+
+.js-plotly-plot .plotly .xtick text, 
+.js-plotly-plot .plotly .ytick text {
+    fill: var(--text-color) !important;
+} 
