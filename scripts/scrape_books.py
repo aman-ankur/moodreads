@@ -7,15 +7,17 @@ from typing import List, Dict, Set
 import sys
 from datetime import datetime
 from tqdm import tqdm
+import os
+import traceback
 
 from moodreads.scraper.goodreads import GoodreadsScraper
 from moodreads.database.mongodb import MongoDBClient
 from moodreads.analysis.claude import EmotionalAnalyzer
 
-# Configure logging
+# Configure more detailed logging
 logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
+    level=logging.DEBUG,  # Set to DEBUG level for more detailed logs
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler('scraping.log'),
         logging.StreamHandler(sys.stdout)
@@ -36,14 +38,44 @@ class BookScraper:
             rate_limit: Minimum seconds between requests
             progress_file: File to store scraping progress
         """
-        self.scraper = GoodreadsScraper()
-        self.db = MongoDBClient()
-        self.analyzer = EmotionalAnalyzer()
-        self.batch_size = batch_size
-        self.rate_limit = rate_limit
-        self.progress_file = Path(progress_file)
-        self.processed_urls: Set[str] = set()
-        self.load_progress()
+        try:
+            logger.debug("Starting BookScraper initialization...")
+            
+            # Clear any proxy settings from environment
+            logger.debug("Clearing proxy settings from environment...")
+            for proxy_var in ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']:
+                if proxy_var in os.environ:
+                    logger.debug(f"Removing {proxy_var} from environment")
+                    os.environ.pop(proxy_var)
+            
+            # Initialize components with detailed logging
+            logger.debug("Initializing GoodreadsScraper...")
+            self.scraper = GoodreadsScraper()
+            logger.debug("GoodreadsScraper initialized successfully")
+            
+            logger.debug("Initializing MongoDBClient...")
+            self.db = MongoDBClient()
+            logger.debug("MongoDBClient initialized successfully")
+            
+            logger.debug("Initializing EmotionalAnalyzer...")
+            self.analyzer = EmotionalAnalyzer()
+            logger.debug("EmotionalAnalyzer initialized successfully")
+            
+            self.batch_size = batch_size
+            self.rate_limit = rate_limit
+            self.progress_file = Path(progress_file)
+            self.processed_urls: Set[str] = set()
+            
+            logger.debug("Loading progress file...")
+            self.load_progress()
+            logger.debug("Progress file loaded successfully")
+            
+            logger.debug("BookScraper initialization completed successfully")
+            
+        except Exception as e:
+            logger.error(f"Failed to initialize BookScraper: {str(e)}")
+            logger.debug(f"Full traceback: {traceback.format_exc()}")
+            raise
 
     def load_progress(self) -> None:
         """Load previously processed URLs from progress file."""
@@ -98,14 +130,14 @@ class BookScraper:
                     continue
                 
                 # Generate emotional profile and embedding
-                profile, embedding = self.analyzer.analyze_book(
+                emotional_profile, embedding = self.analyzer.analyze_book(
                     book_data['description'],
                     book_data.get('reviews', []),
                     book_data.get('genres', [])
                 )
                 
                 # Add to database
-                book_data['emotional_profile'] = profile
+                book_data['emotional_profile'] = emotional_profile
                 book_data['embedding'] = embedding.tolist()
                 book_data['scraped_at'] = datetime.now()
                 
@@ -156,13 +188,13 @@ def main():
     parser.add_argument(
         "--categories",
         nargs="+",
-        default=["literary-fiction", "science-fiction", "mystery"],
+        default=["fiction", "mystery", "science-fiction", "romance", "fantasy"],
         help="Goodreads categories to scrape"
     )
     parser.add_argument(
         "--depth",
         type=int,
-        default=5,
+        default=3,
         help="Number of pages to scrape per category"
     )
     parser.add_argument(
@@ -174,25 +206,38 @@ def main():
     parser.add_argument(
         "--rate-limit",
         type=float,
-        default=2.0,
+        default=3.0,
         help="Minimum seconds between requests"
     )
     
     args = parser.parse_args()
     
     try:
-        scraper = BookScraper(
-            batch_size=args.batch_size,
-            rate_limit=args.rate_limit
-        )
-        scraper.scrape_books(args.categories, args.depth)
-        
+        # Initialize scraper with explicit error handling
+        try:
+            scraper = BookScraper(
+                batch_size=args.batch_size,
+                rate_limit=args.rate_limit
+            )
+        except Exception as e:
+            logger.error(f"Failed to initialize scraper: {str(e)}")
+            raise
+            
+        # Start scraping with explicit error handling
+        try:
+            scraper.scrape_books(args.categories, args.depth)
+        except Exception as e:
+            logger.error(f"Error during scraping: {str(e)}")
+            raise
+            
     except KeyboardInterrupt:
         logger.info("Scraping interrupted by user")
-        scraper.save_progress()
-        
+        if 'scraper' in locals():
+            scraper.save_progress()
     except Exception as e:
         logger.error(f"Scraping failed: {str(e)}")
+        # Print full traceback for debugging
+        logger.error(f"Traceback: {traceback.format_exc()}")
         sys.exit(1)
 
 if __name__ == "__main__":
