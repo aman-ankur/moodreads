@@ -127,6 +127,8 @@ h1, h2, h3, h4, h5, h6 {
 .book-details {
     flex-grow: 1;
     font-family: "Merriweather", "Georgia", serif;
+    display: flex;
+    flex-direction: column;
 }
 
 .book-title {
@@ -149,32 +151,52 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 1rem;
     margin-bottom: 0.75rem;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: none;
+    padding: 0;
+    border: none;
 }
 
 .rating {
     color: var(--goodreads-star);
     font-weight: 600;
     font-size: 0.9rem;
+    background: none;
+    padding: 0;
+    border: none;
+    font-family: inherit;
 }
 
 .book-year {
     color: var(--text-muted);
     font-size: 0.9rem;
+    background: none;
+    padding: 0;
+    border: none;
+    font-family: inherit;
 }
 
 .book-genres {
     color: var(--goodreads-light-brown);
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: none;
+    padding: 0;
+    border: none;
 }
 
 .book-actions {
     display: flex;
     gap: 1rem;
     margin: 1rem 0;
+    background: none;
+    padding: 0;
+    border: none;
 }
 
 .action-button {
+    display: inline-block;
     background-color: var(--goodreads-beige);
     border: 1px solid var(--goodreads-brown);
     border-radius: 4px;
@@ -186,6 +208,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem 1rem;
     text-decoration: none;
     transition: all 0.2s ease;
+    text-align: center;
 }
 
 .action-button:hover {
@@ -197,6 +220,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--goodreads-green);
     border-color: var(--goodreads-green);
     color: white;
+    width: 100%;
 }
 
 .view-on-goodreads:hover {
@@ -204,13 +228,43 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #004d48;
 }
 
-.book-description {
-    color: var(--goodreads-text);
-    font-size: 0.95rem;
+/* Override Streamlit's default code block styling for our components */
+.book-metadata code,
+.book-genres code,
+.book-actions code {
+    background: none !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+    color: inherit !important;
+    border: none !important;
+}
+
+/* Ensure proper text rendering in book details */
+.book-details > * {
+    font-family: inherit;
+    background: none;
+    padding: 0;
+    border: none;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Style the description expander */
+.streamlit-expanderHeader {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--goodreads-brown);
+    background-color: var(--goodreads-beige);
+    border: 1px solid var(--border-color);
+}
+
+.streamlit-expanderContent {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--text-color);
     line-height: 1.6;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-color);
 }
 
 /* Section title styling */
