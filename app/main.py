@@ -28,27 +28,49 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Search input section
-st.markdown("""
-<div class="search-container">
-    <h2>What kind of book are you looking for?</h2>
-</div>
-""", unsafe_allow_html=True)
-
-query = st.text_area(
-    "",
-    placeholder="Examples:\n• I want an uplifting and inspiring book that will make me feel hopeful\n• I'm feeling anxious and need something calming and peaceful\n• Looking for an exciting adventure that will help me escape reality",
-    height=100
-)
-
-col1, col2, col3 = st.columns([1,2,1])
+# Add Get Started button using Streamlit's button
+col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    if st.button("🔍 Find Books", type="primary", use_container_width=True):
-        if query:
-            st.session_state['search_query'] = query
-            st.switch_page("pages/recommendations.py")
-        else:
-            st.warning("Please enter your query first!")
+    if st.button("Get Started", type="primary", use_container_width=True):
+        st.switch_page("pages/1_📚_Recommendations.py")
+
+# Featured Books Grid
+st.markdown('<h2 class="section-title">📚 Featured Books</h2>', unsafe_allow_html=True)
+
+featured_books = [
+    {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1559986152i/386162.jpg"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg"
+    },
+    {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566425108i/33.jpg"
+    }
+]
+
+# Create a grid of featured books
+cols = st.columns(4)
+for idx, book in enumerate(featured_books):
+    with cols[idx]:
+        st.markdown(f"""
+        <div class="featured-book-card">
+            <img src="{book['image']}" alt="{book['title']}" class="book-cover">
+            <h3>{book['title']}</h3>
+            <p>{book['author']}</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 # Features section with improved visibility
 st.markdown('<h2 class="section-title">✨ How It Works</h2>', unsafe_allow_html=True)

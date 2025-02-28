@@ -18,6 +18,13 @@
     --heading-color: #222222;
     --tab-active-color: #ffffff;
     --tab-inactive-color: #333333;
+    --goodreads-brown: #382110;
+    --goodreads-light-brown: #5d4037;
+    --goodreads-beige: #f9f7f4;
+    --goodreads-green: #00635d;
+    --goodreads-link: #00635d;
+    --goodreads-star: #fa604a;
+    --goodreads-text: #181818;
 }
 
 [data-theme="dark"] {
@@ -88,234 +95,189 @@ h1, h2, h3, h4, h5, h6 {
 /* Book card text visibility */
 .book-card {
     background-color: var(--card-background);
-    color: var(--text-color);
-}
-
-.book-title {
-    color: var(--heading-color) !important;
-}
-
-.book-author {
-    color: var(--text-muted);
-}
-
-.book-description {
-    color: var(--text-color);
-}
-
-.book-metadata {
-    color: var(--text-muted);
-}
-
-/* Example card visibility */
-.example-card {
-    color: var(--text-color) !important;
-    background-color: var(--card-background);
-}
-
-/* Feature card visibility */
-.feature-card {
-    color: var(--text-color);
-    background-color: var(--card-background);
-}
-
-.feature-card h3 {
-    color: var(--heading-color) !important;
-}
-
-.feature-card p {
-    color: var(--text-color);
-}
-
-/* Search box visibility */
-.search-box {
-    background-color: var(--card-background);
-}
-
-.search-box textarea {
-    color: var(--text-color) !important;
-}
-
-/* Ensure placeholder text is visible but slightly muted */
-::placeholder {
-    color: var(--text-muted) !important;
-    opacity: 0.7 !important;
-}
-
-/* Ensure selectbox options are visible */
-.stSelectbox ul {
-    background-color: var(--card-background) !important;
-}
-
-.stSelectbox ul li {
-    color: var(--text-color) !important;
-}
-
-/* Ensure slider values are visible */
-.stSlider .stMarkdown p {
-    color: var(--text-color) !important;
-}
-
-.book-card {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
     border: 1px solid var(--border-color);
-    transition: transform 0.2s ease-in-out;
-}
-
-.prompt-card {
-    background-color: var(--card-background);
     border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.prompt-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-color: var(--primary-color);
-}
-
-.prompt-category {
-    font-size: 0.9rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.prompt-text {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .book-card:hover {
+    box-shadow: 0 4px 12px var(--shadow-color);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-card-content {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.book-cover-container {
+    flex-shrink: 0;
+    width: 150px;
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.book-details {
+    flex-grow: 1;
+    font-family: "Merriweather", "Georgia", serif;
 }
 
 .book-title {
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
-    line-height: 1.4;
-    font-weight: 600;
+    color: var(--goodreads-brown);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
 }
 
 .book-author {
-    color: var(--text-color);
-    opacity: 0.8;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-}
-
-.book-description {
-    color: var(--text-color);
-    opacity: 0.9;
-    line-height: 1.6;
-    margin: 1rem 0;
+    color: var(--goodreads-light-brown);
     font-size: 0.95rem;
+    margin: 0 0 1rem 0;
+    font-style: italic;
 }
 
 .book-metadata {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
-    color: var(--text-color);
-    opacity: 0.8;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.match-score {
-    color: var(--primary-color);
-    font-weight: bold;
-    padding: 0.2rem 0.5rem;
-    background: rgba(23, 185, 120, 0.1);
-    border-radius: 4px;
+    margin-bottom: 0.75rem;
 }
 
 .rating {
-    color: #ff9a3c;
-    padding: 0.2rem 0.5rem;
-    background: rgba(255, 154, 60, 0.1);
-    border-radius: 4px;
+    color: var(--goodreads-star);
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-.genres {
-    color: var(--text-color);
-    opacity: 0.8;
+.book-year {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.book-genres {
+    color: var(--goodreads-light-brown);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
-.search-box {
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    padding: 1.5rem;
-    background-color: var(--card-background);
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.book-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
+.action-button {
+    background-color: var(--goodreads-beige);
+    border: 1px solid var(--goodreads-brown);
+    border-radius: 4px;
+    color: var(--goodreads-brown);
+    cursor: pointer;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: var(--goodreads-brown);
+    color: white;
+}
+
+.view-on-goodreads {
+    background-color: var(--goodreads-green);
+    border-color: var(--goodreads-green);
+    color: white;
+}
+
+.view-on-goodreads:hover {
+    background-color: #004d48;
+    border-color: #004d48;
+}
+
+.book-description {
+    color: var(--goodreads-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Section title styling */
 .section-title {
-    color: var(--text-color);
-    margin: 2rem 0 1rem 0;
+    color: var(--goodreads-brown);
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 2rem 0;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--border-color);
-    font-size: 1.8rem;
-    font-weight: 600;
 }
 
-.emotion-chart {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 2rem 0;
+/* Tabs styling */
+.stTabs [data-baseweb="tab"] {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background-color: var(--goodreads-green) !important;
+}
+
+/* Content section styling */
+.content-section {
+    background-color: var(--goodreads-beige);
     border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.content-section h3 {
+    color: var(--goodreads-brown);
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    color: var(--goodreads-text);
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Hero section */
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--goodreads-brown) 0%, var(--goodreads-light-brown) 100%);
+    border-radius: 8px;
     color: white;
-    padding: 4rem 2rem;
-    border-radius: 12px;
+    margin-bottom: 2rem;
+    padding: 3rem 2rem;
     text-align: center;
-    margin-bottom: 3rem;
-    box-shadow: 0 4px 6px var(--shadow-color);
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1.5rem;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-family: "Merriweather", "Georgia", serif;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: white;
 }
 
 .hero-description {
-    font-size: 1.4rem;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
     opacity: 0.9;
-    margin-bottom: 2rem;
-    color: white;
 }
 
 /* Quick action section */
@@ -397,16 +359,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px var(--shadow-color);
     border-color: var(--primary-color);
-}
-
-/* Section titles */
-.section-title {
-    color: var(--text-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 3rem 0 2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border-color);
 }
 
 /* Footer */
@@ -537,6 +489,24 @@ h1, h2, h3, h4, h5, h6 {
     .examples-grid {
         grid-template-columns: 1fr;
     }
+
+    .book-card-content {
+        flex-direction: column;
+    }
+
+    .book-cover-container {
+        width: 120px;
+        margin: 0 auto 1rem auto;
+    }
+
+    .book-actions {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* Search container */
@@ -579,29 +549,6 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #ff9800 !important;
     border-radius: 8px !important;
     margin: 1rem 0 !important;
-}
-
-/* Content sections */
-.content-section {
-    background-color: var(--card-background);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px var(--shadow-color);
-    border: 1px solid var(--border-color);
-}
-
-.content-section h3 {
-    color: var(--heading-color) !important;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.section-description {
-    color: var(--text-color) !important;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
 }
 
 /* Override Streamlit default text colors */
@@ -661,4 +608,63 @@ div[data-baseweb="menu"] > div > div {
 .js-plotly-plot .plotly .xtick text, 
 .js-plotly-plot .plotly .ytick text {
     fill: var(--text-color) !important;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.primary-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.featured-book-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+}
+
+.featured-book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.featured-book-card img.book-cover {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.featured-book-card h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: var(--heading-color);
+    line-height: 1.4;
+}
+
+.featured-book-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
 } 
