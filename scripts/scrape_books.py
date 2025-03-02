@@ -129,18 +129,35 @@ class BookScraper:
                 if not book_data:
                     continue
                 
-                # Generate emotional profile and embedding
-                emotional_profile, embedding = self.analyzer.analyze_book(
+                # Get enhanced reviews
+                reviews_data = self.scraper.get_enhanced_reviews(
+                    url,
+                    min_rating=3,  # Only include reviews with 3+ stars
+                    min_words=50,  # Only include reviews with at least 50 words
+                    max_reviews=20  # Limit to 20 reviews
+                )
+                
+                # Generate enhanced emotional profile
+                enhanced_analysis = self.analyzer.analyze_book_enhanced(
                     book_data['description'],
-                    book_data.get('reviews', []),
+                    reviews_data,
                     book_data.get('genres', [])
                 )
                 
-                # Add to database
-                book_data['emotional_profile'] = emotional_profile
-                book_data['embedding'] = embedding.tolist()
-                book_data['scraped_at'] = datetime.now()
+                # Add enhanced data to book_data
+                book_data['enhanced_emotional_profile'] = enhanced_analysis
+                book_data['reviews_data'] = reviews_data
+                book_data['emotional_profile'] = enhanced_analysis['emotional_profile']
+                book_data['emotional_arc'] = enhanced_analysis['emotional_arc']
+                book_data['emotional_keywords'] = enhanced_analysis['emotional_keywords']
+                book_data['unexpected_emotions'] = enhanced_analysis.get('unexpected_emotions', [])
+                book_data['lasting_impact'] = enhanced_analysis.get('lasting_impact', '')
+                book_data['overall_emotional_profile'] = enhanced_analysis.get('overall_emotional_profile', '')
+                book_data['emotional_intensity'] = enhanced_analysis['emotional_intensity']
+                book_data['embedding'] = enhanced_analysis['embedding']
+                book_data['scraped_at'] = datetime.now().isoformat()
                 
+                # Add to database
                 self.db.add_book(book_data)
                 self.processed_urls.add(url)
                 
@@ -149,6 +166,7 @@ class BookScraper:
                 
             except Exception as e:
                 logger.error(f"Error processing {url}: {str(e)}")
+                logger.error(f"Traceback: {traceback.format_exc()}")
             
             # Save progress after each book
             self.save_progress()
