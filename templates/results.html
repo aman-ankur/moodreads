@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodReads - Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MoodReads</h1>
+            <p class="subtitle">Discover books that match your emotional state</p>
+        </header>
+        
+        <div class="results-container">
+            <div class="results-header">
+                <h2>Books for "{{ mood }}"</h2>
+                <p>Here are books that match your mood:</p>
+                
+                <a href="/" class="back-link">
+                    &larr; Back to search
+                </a>
+                
+                <a href="/advanced" class="advanced-link">
+                    Try advanced recommendations &rarr;
+                </a>
+            </div>
+            
+            {% if recommendations %}
+                <div class="recommendations-grid">
+                    {% for book in recommendations %}
+                        <div class="book-card">
+                            <div class="book-cover">
+                                <img src="{{ book.cover_url or url_for('static', filename='images/default-cover.jpg') }}" alt="Cover of {{ book.title }}">
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">{{ book.title }}</h3>
+                                <p class="book-author">{{ book.author }}</p>
+                                
+                                <div class="match-score">
+                                    <div class="progress-bar">
+                                        <div class="progress-value" style="width: {{ book.match_score }}%"></div>
+                                    </div>
+                                    <span>{{ book.match_score }}%</span>
+                                </div>
+                                
+                                {% if book.matching_emotions %}
+                                    <div class="matching-emotions">
+                                        {% for emotion in book.matching_emotions[:3] %}
+                                            <span class="emotion-tag">{{ emotion.emotion }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-results">
+                    <p>No books found for this mood. Try a different mood or check out our advanced recommendations.</p>
+                    <a href="/advanced" class="try-advanced-btn">Try Advanced Recommendations</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MoodReads. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

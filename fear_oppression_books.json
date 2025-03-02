@@ -1,0 +1,19 @@
+[
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "cover_url": "http://books.google.com/books/content?id=kotPYEqx7kMC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72SavZvBcAyJflYjR_Rcoyq86id8ctCVr5Nfl6yfrLxkb-uEuiLckY4qfHkB_nj-y9UUeE43UP4LvAt7PLqBIMAR_p8EGM6tUUCjCtjrV4xiLPx7cSD3xlVsoxthDxGqLHtWY9t&source=gbs_api",
+    "match_score": 13,
+    "matching_emotions": [
+      {
+        "emotion": "fear",
+        "intensity": 9.0
+      },
+      {
+        "emotion": "oppression",
+        "intensity": 8.0
+      }
+    ],
+    "goodreads_url": null
+  }
+]

@@ -1,0 +1,149 @@
+{
+  "id": "PGR2AwAAQBAJ",
+  "title": "To Kill a Mockingbird",
+  "authors": [
+    "Harper Lee"
+  ],
+  "publisher": "Harper Collins",
+  "published_date": "2014-07-08",
+  "description": "<p>Harper Lee's Pulitzer Prize-winning masterwork of honor and injustice in the deep South—and the heroism of one man in the face of blind and violent hatred.</p><p>One of the most cherished stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime.</p>",
+  "categories": [
+    "Fiction / Classics",
+    "Fiction / Southern",
+    "Fiction / Coming of Age",
+    "Fiction / Literary",
+    "Fiction / World Literature / American / 20th Century",
+    "Fiction / Media Tie-In",
+    "Fiction / Women",
+    "Fiction / Small Town & Rural",
+    "Fiction / Sagas",
+    "Fiction / Psychological"
+  ],
+  "average_rating": 3,
+  "ratings_count": 18,
+  "isbn": "0062368680",
+  "page_count": 336,
+  "language": "en",
+  "preview_link": "http://books.google.co.in/books?id=PGR2AwAAQBAJ&hl=&source=gbs_api",
+  "info_link": "https://play.google.com/store/books/details?id=PGR2AwAAQBAJ&source=gbs_api",
+  "image_links": {
+    "smallThumbnail": "http://books.google.com/books/publisher/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE722o371KZwPBYX-YO96R9g6io8X0q-XHmixrScfvx-9ughRizizhB5cM1h0h86KJ0UOyMakwLqUg5Y3nGicpo1-iLHLnXla0jRho2eHO3T9J0MVIroD2D_xYTRXs0W1-g9gphxj&source=gbs_api",
+    "thumbnail": "http://books.google.com/books/publisher/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72ymtgViLs3QFLNvpf0UScEuN0QivfhQVT9dEVZr4iQsvQldXR5Fp6Bret333utzQIUKgzmDTTr4wH-4xB3BnwpAAt6i-LLuWYnnJdCqdfeSwsIK36owfS97MlSNy-ac1x1YiUe&source=gbs_api",
+    "small": "http://books.google.com/books/publisher/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71qKFdK5wJO_B7W87x4z7q5NqIbxejcKO52JQant7-aGftm7npdKyek44BSSn9uzdVJJVGPgZxYPZ4I2UOij1ZQPguI2SmumL4F_IAGfySzWMQVaei_Lq196mb8B7vssd8sOP2L&source=gbs_api",
+    "medium": "http://books.google.com/books/publisher/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70Ci5BaKBGSVBxCm3ebUAvIiqOSx4y1UNdywXA-97jFYmTOT4dBgtEFL-Q__wH_M8COnZTNZkK_EcQc3yvNc2R93DDy9yFLFyz9xbXqvLQa0mmR63Ynrim__xLsWtye6B6-ngj1&source=gbs_api",
+    "large": "http://books.google.com/books/publisher/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE713K7o6Zt9F41yZR9nR291sUZRLZzGPmdG7b9czQN0umgFbkwrHPxaKPOaZCGOEF-I8nHbI6mEW3A7OA-K659vXaMfkozdZr_jD-3q_JhCJ1MsklbBE8pp8ISOjCbWdPCmEGOGl&source=gbs_api",
+    "extraLarge": "http://books.google.com/books/publisher/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE72HKnDCLbIOS3e-PJNFr1k5kyV_iHTYNaBvT3ZTO4XioaEW1DRgW53x1CgozkYLiCQd9EvIC4elthCu5P1bqItR3xRCtZRJQg30o3qSxryRqBXEGgYItqbPCe-dPfLLnk9R92kl&source=gbs_api"
+  },
+  "reviews": [],
+  "emotional_profile": {
+    "primary_emotions": [
+      {
+        "emotion": "Outrage",
+        "intensity": 9.0
+      },
+      {
+        "emotion": "Sadness",
+        "intensity": 8.0
+      },
+      {
+        "emotion": "Admiration",
+        "intensity": 7.0
+      },
+      {
+        "emotion": "reflection",
+        "intensity": 5.6
+      },
+      {
+        "emotion": "neutral",
+        "intensity": 5.0
+      },
+      {
+        "emotion": "satisfaction",
+        "intensity": 4.8
+      },
+      {
+        "emotion": "melancholy",
+        "intensity": 4.0
+      }
+    ],
+    "emotional_arc": {
+      "beginning": [
+        "neutral",
+        "I",
+        "n",
+        "o",
+        "c",
+        "e",
+        " ",
+        "a",
+        "d",
+        "i",
+        "v",
+        "t",
+        "y",
+        "f",
+        "h",
+        "l"
+      ],
+      "middle": [
+        "neutral",
+        "C",
+        "o",
+        "n",
+        "f",
+        "r",
+        "t",
+        "a",
+        "i",
+        " ",
+        "w",
+        "h",
+        "s",
+        "e",
+        "l",
+        "p",
+        "j",
+        "u",
+        "d",
+        "c"
+      ],
+      "end": [
+        "neutral",
+        "D",
+        "i",
+        "s",
+        "l",
+        "u",
+        "o",
+        "n",
+        "m",
+        "e",
+        "t",
+        " ",
+        "b",
+        "a",
+        "p",
+        "r",
+        "f",
+        "h"
+      ]
+    },
+    "unexpected_emotions": [
+      "Courage",
+      "Hope"
+    ],
+    "lasting_impact": "Unknown",
+    "emotional_keywords": [
+      "heart-wrenching",
+      "honor",
+      "prejudice",
+      "crusading",
+      "heroism",
+      "hatred",
+      "savage inequities",
+      "unjustly accused",
+      "injustice"
+    ],
+    "overall_emotional_profile": "Neutral emotional profile"
+  }
+}

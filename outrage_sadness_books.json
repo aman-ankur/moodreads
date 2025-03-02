@@ -1,0 +1,19 @@
+[
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "cover_url": "http://books.google.com/books/publisher/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73asDISvq086A2ZhafmJDZ3-yCWIz5Pcm3VKxMRpjCJRpM6MOrOdLK0kyshpf0gvWGV_dOoEaZ_XMvFQazuEZCykBr9hofj5fq4r7rwtAGB-Al_fDGb3rhSvXp5xrCj6OJHBrpv&source=gbs_api",
+    "match_score": 13,
+    "matching_emotions": [
+      {
+        "emotion": "Outrage",
+        "intensity": 9.0
+      },
+      {
+        "emotion": "Sadness",
+        "intensity": 8.0
+      }
+    ],
+    "goodreads_url": null
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "title": "Harry Potter and the Sorcerer's Stone",
+  "author": "J.K. Rowling",
+  "isbn": "1781100489",
+  "description": "<p><i>Turning the envelope over, his hand trembling, Harry saw a purple wax seal bearing a coat of arms; a lion, an eagle, a badger and a snake surrounding a large letter 'H'.</i><br><br>Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet Drive. Addressed in green ink on yellowish parchment with a purple seal, they are swiftly confiscated by his grisly aunt and uncle. Then, on Harry's eleventh birthday, a great beetle-eyed giant of a man called Rubeus Hagrid bursts in with some astonishing news: Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!<br><br><br><i>Having become classics of our time, the Harry Potter eBooks never fail to bring comfort and escapism. With their message of hope, belonging and the enduring power of truth and love, the story of the Boy Who Lived continues to delight generations of new readers.</i></p>",
+  "genres": [
+    "Juvenile Fiction / Action & Adventure / General",
+    "Juvenile Fiction / Fantasy & Magic",
+    "Young Adult Fiction / Action & Adventure / General",
+    "Young Adult Fiction / Fantasy / Wizards & Witches",
+    "Young Adult Fiction / School & Education / Boarding School & Prep School",
+    "Juvenile Fiction / Family / General",
+    "Young Adult Fiction / Fantasy / General",
+    "Young Adult Fiction / Fantasy / Contemporary",
+    "Fiction / Action & Adventure",
+    "Fiction / Fantasy / General",
+    "Juvenile Fiction / School & Education"
+  ],
+  "avg_rating": 4.5,
+  "ratings_count": 331,
+  "published_date": "2015-12-08",
+  "page_count": 309,
+  "google_books_id": "wrOQLV6xB-wC",
+  "google_books_link": "https://play.google.com/store/books/details?id=wrOQLV6xB-wC&source=gbs_api",
+  "cover_url": "http://books.google.com/books/content?id=wrOQLV6xB-wC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE706l9po_uBhxUnmKCgESWiHZ5ceDBhdEjUuZoTcFtnX9vYCsTBVaqx8ZkAvRhQ38wJNFuIf9LhIU37JtywYbxP6mUSu0pLin7NtZSAHUKMBGWot94S49REAIPSkAQAsv2LJIagD&source=gbs_api",
+  "reviews": [],
+  "emotional_profile": {
+    "primary_emotions": [
+      {
+        "emotion": "Wonder",
+        "intensity": 9.0
+      },
+      {
+        "emotion": "Excitement",
+        "intensity": 8.0
+      },
+      {
+        "emotion": "Curiosity",
+        "intensity": 7.0
+      },
+      {
+        "emotion": "excitement",
+        "intensity": 6.4
+      },
+      {
+        "emotion": "wonder",
+        "intensity": 6.4
+      },
+      {
+        "emotion": "neutral",
+        "intensity": 5.0
+      },
+      {
+        "emotion": "curiosity",
+        "intensity": 4.8
+      },
+      {
+        "emotion": "hope",
+        "intensity": 4.0
+      },
+      {
+        "emotion": "inspiration",
+        "intensity": 4.0
+      }
+    ],
+    "emotional_arc": {
+      "beginning": [
+        "neutral",
+        "C",
+        "o",
+        "n",
+        "f",
+        "u",
+        "s",
+        "i",
+        " ",
+        "a",
+        "d",
+        "t",
+        "r",
+        "g",
+        "e"
+      ],
+      "middle": [
+        "neutral",
+        "A",
+        "s",
+        "t",
+        "o",
+        "n",
+        "i",
+        "h",
+        "m",
+        "e",
+        " ",
+        "a",
+        "d",
+        "c",
+        "p"
+      ],
+      "end": [
+        "neutral",
+        "H",
+        "o",
+        "p",
+        "e",
+        " ",
+        "a",
+        "n",
+        "d",
+        "b",
+        "l",
+        "g",
+        "i"
+      ]
+    },
+    "unexpected_emotions": [
+      "Comfort",
+      "Escapism"
+    ],
+    "lasting_impact": "Unknown",
+    "emotional_keywords": [
+      "comfort",
+      "trembling",
+      "truth",
+      "escapism",
+      "astonishing news",
+      "belonging",
+      "incredible adventure",
+      "hope",
+      "love",
+      "enduring power"
+    ],
+    "overall_emotional_profile": "Neutral emotional profile"
+  },
+  "created_at": "2025-03-02T01:19:41.903372",
+  "last_updated": "2025-03-02T01:19:41.903372",
+  "_id": "67c364d5de8720dc5b2652f7"
+}

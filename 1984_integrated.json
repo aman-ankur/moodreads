@@ -1,0 +1,128 @@
+{
+  "title": "1984",
+  "author": "George Orwell",
+  "isbn": "0547249640",
+  "description": "<p>75th ANNIVERSARY EDITION</p><p>“Orwell saw, to his credit, that the act of falsifying reality is only secondarily a way of changing perceptions. It is, above all, a way of asserting power.”—The New Yorker</p><p>In 1984, London is a grim city in the totalitarian state of Oceania where Big Brother is always watching you and the Thought Police can practically read your mind. Winston Smith is a man in grave danger for the simple reason that his memory still functions. Drawn into a forbidden love affair, Winston finds the courage to join a secret revolutionary organization called The Brotherhood, dedicated to the destruction of the Party. Together with his beloved Julia, he hazards his life in a deadly match against the powers that be.</p><p>Lionel Trilling said of Orwell’s masterpiece, “1984 is a profound, terrifying, and wholly fascinating book. It is a fantasy of the political future, and like any such fantasy, serves its author as a magnifying device for an examination of the present.” Though the year 1984 now exists in the past, Orwell’s novel remains an urgent call for the individual willing to speak truth to power.</p>",
+  "genres": [
+    "Fiction / Classics",
+    "Fiction / Literary",
+    "Fiction / Dystopian",
+    "Fiction / Political"
+  ],
+  "avg_rating": 4.5,
+  "ratings_count": 82,
+  "published_date": "2013-09-03",
+  "page_count": 304,
+  "google_books_id": "kotPYEqx7kMC",
+  "google_books_link": "https://play.google.com/store/books/details?id=kotPYEqx7kMC&source=gbs_api",
+  "cover_url": "http://books.google.com/books/content?id=kotPYEqx7kMC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72SavZvBcAyJflYjR_Rcoyq86id8ctCVr5Nfl6yfrLxkb-uEuiLckY4qfHkB_nj-y9UUeE43UP4LvAt7PLqBIMAR_p8EGM6tUUCjCtjrV4xiLPx7cSD3xlVsoxthDxGqLHtWY9t&source=gbs_api",
+  "reviews": [],
+  "emotional_profile": {
+    "primary_emotions": [
+      {
+        "emotion": "fear",
+        "intensity": 9.0
+      },
+      {
+        "emotion": "oppression",
+        "intensity": 8.0
+      },
+      {
+        "emotion": "courage",
+        "intensity": 7.0
+      },
+      {
+        "emotion": "reflection",
+        "intensity": 5.6
+      },
+      {
+        "emotion": "neutral",
+        "intensity": 5.0
+      },
+      {
+        "emotion": "satisfaction",
+        "intensity": 4.8
+      },
+      {
+        "emotion": "melancholy",
+        "intensity": 4.0
+      }
+    ],
+    "emotional_arc": {
+      "beginning": [
+        "neutral",
+        "d",
+        "r",
+        "e",
+        "a",
+        ",",
+        " ",
+        "u",
+        "n",
+        "s",
+        "v",
+        "i",
+        "l",
+        "c"
+      ],
+      "middle": [
+        "neutral",
+        "f",
+        "o",
+        "r",
+        "b",
+        "i",
+        "d",
+        "e",
+        "n",
+        " ",
+        "l",
+        "v",
+        ",",
+        "c",
+        "u",
+        "a",
+        "g",
+        "s",
+        "t"
+      ],
+      "end": [
+        "neutral",
+        "u",
+        "r",
+        "g",
+        "e",
+        "n",
+        "c",
+        "y",
+        ",",
+        " ",
+        "a",
+        "l",
+        "t",
+        "o",
+        "i"
+      ]
+    },
+    "unexpected_emotions": [
+      "love",
+      "hope"
+    ],
+    "lasting_impact": "Unknown",
+    "emotional_keywords": [
+      "urgent call",
+      "forbidden love",
+      "deadly match",
+      "grave danger",
+      "totalitarian",
+      "terrifying",
+      "profound",
+      "courage",
+      "grim"
+    ],
+    "overall_emotional_profile": "Neutral emotional profile"
+  },
+  "created_at": "2025-03-02T01:20:34.382032",
+  "last_updated": "2025-03-02T01:20:34.382032",
+  "_id": "67c3650a68b660bb541bbec5"
+}

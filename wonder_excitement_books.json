@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "cover_url": "http://books.google.com/books/content?id=wrOQLV6xB-wC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE706l9po_uBhxUnmKCgESWiHZ5ceDBhdEjUuZoTcFtnX9vYCsTBVaqx8ZkAvRhQ38wJNFuIf9LhIU37JtywYbxP6mUSu0pLin7NtZSAHUKMBGWot94S49REAIPSkAQAsv2LJIagD&source=gbs_api",
+    "match_score": 17,
+    "matching_emotions": [
+      {
+        "emotion": "Wonder",
+        "intensity": 9.0
+      },
+      {
+        "emotion": "Excitement",
+        "intensity": 8.0
+      },
+      {
+        "emotion": "excitement",
+        "intensity": 6.4
+      },
+      {
+        "emotion": "wonder",
+        "intensity": 6.4
+      }
+    ],
+    "goodreads_url": null
+  }
+]
