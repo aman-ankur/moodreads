@@ -17,7 +17,6 @@ This technical specification outlines enhancements to the MoodReads book recomme
 
 1. **EnhancedGoodreadsScraper**
    - Collects basic metadata: title, author, ISBN/ISBN13, cover image, ratings
-   - Extracts user reviews and quotes for emotional context
    - Maintains rate limiting and resumable scraping functionality
 
 2. **GoogleBooksAPIClient**
