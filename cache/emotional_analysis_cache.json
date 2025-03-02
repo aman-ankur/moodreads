@@ -1,0 +1,336 @@
+{
+  "desc_ae9e4acd471fe38b8850f2744f4ac947": {
+    "primary_emotions": [
+      {
+        "emotion": "Outrage",
+        "intensity": 9
+      },
+      {
+        "emotion": "Sadness",
+        "intensity": 8
+      },
+      {
+        "emotion": "Admiration",
+        "intensity": 7
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Innocence and naivety of childhood",
+      "middle": "Confrontation with harsh realities of prejudice and injustice",
+      "end": "Disillusionment but also inspiration from a moral hero"
+    },
+    "unexpected_emotions": [
+      "Hope",
+      "Courage"
+    ],
+    "lasting_impact": "The book leaves a profound emotional impact by exposing the ugliness of racism and celebrating moral courage in the face of injustice. Readers are left with a mix of sadness over societal flaws but also hope that individuals can make a difference.",
+    "emotional_keywords": [
+      "honor",
+      "injustice",
+      "heroism",
+      "hatred",
+      "heart-wrenching",
+      "prejudice",
+      "savage inequities",
+      "crusading",
+      "unjustly accused"
+    ],
+    "overall_emotional_profile": "To Kill a Mockingbird is an emotionally powerful and thought-provoking novel that evokes strong feelings of outrage against injustice and prejudice, deep sadness at the harsh realities depicted, but also admiration for moral courage and a sense of hope that good can ultimately prevail."
+  },
+  "desc_c46a6e9d96e9c583bd1bf7af8f7d0376": {
+    "primary_emotions": [
+      {
+        "emotion": "Inspirational",
+        "intensity": 8
+      },
+      {
+        "emotion": "Thoughtful",
+        "intensity": 7
+      },
+      {
+        "emotion": "Reflective",
+        "intensity": 6
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Contemplative, seeking wisdom",
+      "middle": "Introspective, grappling with life's challenges",
+      "end": "Uplifting, motivated for positive change"
+    },
+    "unexpected_emotions": [
+      "Vulnerability",
+      "Resilience"
+    ],
+    "lasting_impact": "The book aims to leave readers feeling empowered, motivated, and equipped with a more profound understanding of life's challenges and how to approach them with courage and imagination.",
+    "emotional_keywords": [
+      "deeply affecting",
+      "wisdom",
+      "profound",
+      "provocative",
+      "embrace failure",
+      "emotional force"
+    ],
+    "overall_emotional_profile": "Very Good Lives is an introspective and thought-provoking work that aims to inspire readers to confront life's challenges with resilience, imagination, and a deeper sense of self-awareness. Through personal stories and profound insights, Rowling evokes a range of emotions, from vulnerability and contemplation to empowerment and motivation."
+  },
+  "desc_a834e488e54fe00f9b8d0dddc4792171": {
+    "primary_emotions": [
+      {
+        "emotion": "Wonder",
+        "intensity": 9
+      },
+      {
+        "emotion": "Excitement",
+        "intensity": 8
+      },
+      {
+        "emotion": "Curiosity",
+        "intensity": 7
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Confusion and intrigue",
+      "middle": "Astonishment and anticipation",
+      "end": "Hope and belonging"
+    },
+    "unexpected_emotions": [
+      "Comfort",
+      "Escapism"
+    ],
+    "lasting_impact": "The description promises a sense of wonder, excitement, and hope that will resonate with readers long after they've finished the book. The themes of belonging, truth, and love suggest a lasting emotional impact of feeling understood and uplifted.",
+    "emotional_keywords": [
+      "trembling",
+      "astonishing news",
+      "incredible adventure",
+      "comfort",
+      "escapism",
+      "hope",
+      "belonging",
+      "enduring power",
+      "truth",
+      "love"
+    ],
+    "overall_emotional_profile": "The description evokes a strong sense of childlike wonder and excitement, promising an adventure filled with magic and the extraordinary. It also hints at deeper emotional themes of hope, belonging, and the triumph of love and truth, suggesting a multi-layered emotional experience that will both enchant and uplift readers."
+  },
+  "desc_b6e5ccbe979a3798168e24016ca892b4": {
+    "primary_emotions": [
+      {
+        "emotion": "Curiosity",
+        "intensity": 7
+      },
+      {
+        "emotion": "Interest",
+        "intensity": 6
+      },
+      {
+        "emotion": "Intellectuality",
+        "intensity": 6
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Intrigued by the premise of exploring the social aspects of books",
+      "middle": "Engaged and intellectually stimulated by the examination of various roles and reader behavior",
+      "end": "Satisfied curiosity and interest in the fascinating story of books as a communication medium"
+    },
+    "unexpected_emotions": [],
+    "lasting_impact": "A deeper appreciation and understanding of the intricate social dynamics surrounding books, fostering a more mindful and enriched experience as a reader or participant in the book industry.",
+    "emotional_keywords": [
+      "fascinating",
+      "interest",
+      "behaviour",
+      "arguments",
+      "supported"
+    ],
+    "overall_emotional_profile": "The book description evokes a sense of intellectual curiosity and interest in exploring the sociological aspects of books. It promises an engaging and informative examination of the various roles and reader behaviors involved in the book industry, ultimately satisfying the reader's thirst for knowledge and leaving a lasting impact of appreciation for the complex dynamics surrounding books as a medium of communication."
+  },
+  "desc_0336c499049328ff9257b8899a9c261c": {
+    "primary_emotions": [
+      {
+        "emotion": "Inspirational",
+        "intensity": 8
+      },
+      {
+        "emotion": "Thoughtful",
+        "intensity": 7
+      },
+      {
+        "emotion": "Hopeful",
+        "intensity": 6
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Reflective, introspective",
+      "middle": "Motivational, encouraging",
+      "end": "Uplifting, empowering"
+    },
+    "unexpected_emotions": [
+      "Vulnerability",
+      "Humility"
+    ],
+    "lasting_impact": "The book aims to leave readers feeling inspired, motivated, and empowered to embrace life's challenges and use their imagination to better themselves and the world around them.",
+    "emotional_keywords": [
+      "deeply affecting",
+      "wisdom",
+      "turning point",
+      "profound",
+      "provocative",
+      "embrace failure",
+      "imagination",
+      "acuity",
+      "emotional force"
+    ],
+    "overall_emotional_profile": "Very Good Lives is a thought-provoking and emotionally resonant work that seeks to inspire and motivate readers through J.K. Rowling's personal stories and insights. While addressing profound and challenging topics, the book maintains an overall tone of hope, encouragement, and empowerment."
+  },
+  "desc_91296a344b0f11914581e72d0e770473": {
+    "primary_emotions": [
+      {
+        "emotion": "Wonder",
+        "intensity": 8
+      },
+      {
+        "emotion": "Excitement",
+        "intensity": 7
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Curiosity",
+      "middle": "Awe",
+      "end": "Exhilaration"
+    },
+    "unexpected_emotions": [],
+    "lasting_impact": "This book is likely to leave the reader with a sense of inspiration and a desire for adventure or exploration.",
+    "emotional_keywords": [
+      "wonder",
+      "excitement"
+    ],
+    "overall_emotional_profile": "This book evokes a strong sense of wonder and excitement throughout. The emotional journey starts with curiosity, builds to a peak of awe and amazement, and concludes with an exhilarating feeling. The primary emotions are very positive and uplifting, leaving a lasting impact of inspiration."
+  },
+  "desc_b2648793ce5bc7cb819794a17ee6815c": {
+    "primary_emotions": [
+      {
+        "emotion": "Disillusionment",
+        "intensity": 8
+      },
+      {
+        "emotion": "Sadness",
+        "intensity": 7
+      },
+      {
+        "emotion": "Nostalgia",
+        "intensity": 6
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Anticipation and nostalgia for returning home",
+      "middle": "Disillusionment and sadness as disturbing truths are revealed",
+      "end": "Wisdom, growth, and a bittersweet acceptance of change"
+    },
+    "unexpected_emotions": [
+      "Disillusionment",
+      "Sadness"
+    ],
+    "lasting_impact": "The novel leaves a lasting impact of bittersweet growth, as the protagonist is forced to confront harsh realities and shed her childhood illusions, ultimately gaining a deeper understanding of the complexities of the world.",
+    "emotional_keywords": [
+      "bittersweet",
+      "disturbing truths",
+      "values and assumptions thrown into doubt",
+      "painful yet necessary transition",
+      "wisdom",
+      "humanity",
+      "passion"
+    ],
+    "overall_emotional_profile": "Go Set a Watchman is a poignant and emotionally complex novel that explores themes of disillusionment, sadness, and the loss of innocence, as the protagonist confronts the harsh realities of racial tensions and societal change. While nostalgic for her childhood memories, she is forced to grapple with disturbing truths about her family and community, leading to a bittersweet journey of growth and acceptance. The novel evokes a range of emotions, from nostalgia and anticipation to disillusionment and sadness, ultimately leaving a lasting impact of wisdom and a deeper understanding of the complexities of the human experience."
+  },
+  "desc_3fc2fe83e2e38ccdf745307c93692556": {
+    "primary_emotions": [
+      {
+        "emotion": "fear",
+        "intensity": 9
+      },
+      {
+        "emotion": "oppression",
+        "intensity": 8
+      },
+      {
+        "emotion": "courage",
+        "intensity": 7
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "dread, unease, surveillance",
+      "middle": "forbidden love, courage, resistance",
+      "end": "urgency, call to action"
+    },
+    "unexpected_emotions": [
+      "love",
+      "hope"
+    ],
+    "lasting_impact": "A chilling and thought-provoking exploration of totalitarianism and the human spirit's resilience, leaving a lasting sense of vigilance against the erosion of individual freedoms.",
+    "emotional_keywords": [
+      "grim",
+      "totalitarian",
+      "grave danger",
+      "forbidden love",
+      "courage",
+      "deadly match",
+      "profound",
+      "terrifying",
+      "urgent call"
+    ],
+    "overall_emotional_profile": "1984 evokes a pervasive sense of fear, oppression, and dread under a totalitarian regime, yet interweaves unexpected threads of forbidden love, courage, and resistance, culminating in an urgent call to defend individual freedoms. The emotional impact is profound, terrifying, and thought-provoking, leaving a lasting impression of the fragility of liberty and the resilience of the human spirit."
+  },
+  "desc_47ecceebb44997a44e21a0ae80fdee31": {
+    "primary_emotions": [
+      {
+        "emotion": "fear",
+        "intensity": 8
+      },
+      {
+        "emotion": "oppression",
+        "intensity": 7
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Sense of unease and foreboding",
+      "middle": "Overwhelming feelings of fear and being trapped",
+      "end": "Lingering sense of oppression and dread"
+    },
+    "unexpected_emotions": [
+      "Claustrophobia",
+      "Powerlessness"
+    ],
+    "lasting_impact": "This book is likely to leave readers with a lasting sense of unease, fear, and a feeling of being oppressed or trapped, even after finishing it. The intense emotions evoked may linger and potentially impact the reader's psyche.",
+    "emotional_keywords": [
+      "fear",
+      "oppression",
+      "dread",
+      "unease",
+      "trapped",
+      "foreboding"
+    ],
+    "overall_emotional_profile": "This book appears to be a deeply unsettling and emotionally intense read, evoking strong feelings of fear, oppression, and a sense of being trapped or powerless. The emotional arc builds from a sense of unease to overwhelming fear and oppression, leaving a lasting impact of dread and unease on the reader."
+  },
+  "desc_b2b82ebf463a30c046db284d516766b2": {
+    "primary_emotions": [
+      {
+        "emotion": "outrage",
+        "intensity": 8
+      },
+      {
+        "emotion": "sadness",
+        "intensity": 7
+      }
+    ],
+    "emotional_arc": {
+      "beginning": "Outrage and sadness are immediately evoked",
+      "middle": "These emotions likely intensify as the narrative progresses",
+      "end": "The outrage and sadness may reach a climax or resolution"
+    },
+    "unexpected_emotions": [],
+    "lasting_impact": "This book seems designed to provoke strong negative emotions like outrage and sadness that could linger after reading, prompting self-reflection or calls to action.",
+    "emotional_keywords": [
+      "outrage",
+      "sadness"
+    ],
+    "overall_emotional_profile": "This book appears to elicit intense feelings of outrage and sadness throughout its narrative, likely aiming to provoke an emotional reaction in readers that persists beyond the final pages."
+  }
+}

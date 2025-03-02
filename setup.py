@@ -27,12 +27,28 @@ setup(
     author="Your Name",
     author_email="your.email@example.com",
     url="https://github.com/yourusername/moodreads",
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=find_packages(),
     python_requires=">=3.9",
-    install_requires=read_requirements('requirements.txt'),
+    install_requires=[
+        "fastapi",
+        "uvicorn",
+        "python-decouple",
+        "pymongo",
+        "numpy",
+        "anthropic",
+        "pydantic",
+        "python-dotenv",
+    ],
     extras_require={
-        'dev': read_requirements('requirements-dev.txt'),
+        "dev": [
+            "pytest",
+            "black",
+            "flake8",
+            "mypy",
+            "pytest-cov",
+            "httpx",
+            "pytest-asyncio",
+        ],
     },
     entry_points={
         'console_scripts': [
