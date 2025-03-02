@@ -1,0 +1,139 @@
+{
+  "emotional_profile": [
+    {
+      "emotion": "injustice",
+      "intensity": 3.2,
+      "explanation": "The book deals with themes of deep injustice and prejudice in the South",
+      "sources": [
+        "description"
+      ]
+    },
+    {
+      "emotion": "heroism",
+      "intensity": 2.8,
+      "explanation": "The main character's father heroically defends a wrongly accused black man despite great personal risk",
+      "sources": [
+        "description"
+      ]
+    },
+    {
+      "emotion": "contemplative",
+      "intensity": 2.7,
+      "explanation": "Genre (Fiction / Literary)",
+      "sources": [
+        "genres"
+      ]
+    },
+    {
+      "emotion": "introspective",
+      "intensity": 2.7,
+      "explanation": "Genre (Fiction / Psychological)",
+      "sources": [
+        "genres"
+      ]
+    },
+    {
+      "emotion": "coming-of-age",
+      "intensity": 2.4,
+      "explanation": "The story is a coming-of-age tale as seen through the eyes of a young girl",
+      "sources": [
+        "description"
+      ]
+    },
+    {
+      "emotion": "nostalgia",
+      "intensity": 2.4,
+      "explanation": "Genre (Fiction / Classics)",
+      "sources": [
+        "genres"
+      ]
+    },
+    {
+      "emotion": "uncertainty",
+      "intensity": 2.4,
+      "explanation": "Genre (Fiction / Coming of Age)",
+      "sources": [
+        "genres"
+      ]
+    },
+    {
+      "emotion": "empathy",
+      "intensity": 2.4,
+      "explanation": "Genre (Fiction / Women)",
+      "sources": [
+        "genres"
+      ]
+    },
+    {
+      "emotion": "dramatic",
+      "intensity": 2.4,
+      "explanation": "Genre (Fiction / Sagas)",
+      "sources": [
+        "genres"
+      ]
+    },
+    {
+      "emotion": "melancholy",
+      "intensity": 2.1,
+      "explanation": "Genre (Fiction / Southern)",
+      "sources": [
+        "genres"
+      ]
+    }
+  ],
+  "emotional_arc": {
+    "beginning": [
+      "beauty",
+      "innocence"
+    ],
+    "middle": [
+      "injustice",
+      "prejudice",
+      "violence"
+    ],
+    "end": [
+      "heroism",
+      "courage"
+    ]
+  },
+  "emotional_keywords": [
+    "injustice",
+    "prejudice",
+    "heroism",
+    "coming-of-age",
+    "beauty",
+    "innocence",
+    "courage"
+  ],
+  "unexpected_emotions": [],
+  "lasting_impact": "",
+  "overall_emotional_profile": "The overall emotional tone is one of a loss of innocence and coming face to face with the harsh realities and injustices of the world, yet still finding beauty, heroism and courage in the face of it. The book deals with heavy themes of racism and prejudice but is ultimately uplifting in its portrayal of the bravery and integrity of those who fight against it.",
+  "emotional_intensity": 2.55,
+  "embedding": [
+    0.24,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.21000000000000002,
+    0.24,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "analyzed_at": "2025-03-02 13:07:10"
+}
