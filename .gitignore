@@ -35,6 +35,10 @@ venv/
 ENV/
 env/
 moodreads/
+.moodreads-env/
+.moodreads-env/bin/*
+.moodreads-env/include/
+.moodreads-env/lib/
 
 # IDE
 .idea/

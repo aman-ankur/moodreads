@@ -1,12 +1,12 @@
 import pytest
-from moodreads.recommender.engine import RecommendationEngine
+from moodreads.recommendation.enhanced_recommender import EnhancedRecommender
 
 def test_recommendation_engine_initialization():
-    engine = RecommendationEngine()
+    engine = EnhancedRecommender()
     assert engine is not None
 
 def test_get_recommendations():
-    engine = RecommendationEngine()
+    engine = EnhancedRecommender()
     emotional_profile = {
         "joy": 0.8,
         "comfort": 0.7,
