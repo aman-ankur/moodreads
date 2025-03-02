@@ -1,0 +1,42 @@
+{
+  "source": "google_books",
+  "google_books_id": "uyr8BAAAQBAJ",
+  "title": "1984",
+  "subtitle": null,
+  "author": "George Orwell",
+  "all_authors": [
+    "George Orwell"
+  ],
+  "google_description": "<p>George Orwell's dystopian masterpiece, <i>Nineteen Eighty-Four </i>is perhaps the most pervasively influential book of the twentieth century, making famous Big Brother, newspeak and Room 101.</p><p> </p><p>'Who controls the past controls the future: who controls the present controls the past'</p>",
+  "publisher": "Arcturus Publishing",
+  "published_date": "2014-01-04",
+  "page_count": 317,
+  "isbn": "1784043737",
+  "isbn13": "9781784043735",
+  "google_categories": [
+    "Fiction / Dystopian",
+    "Fiction / Science Fiction / General"
+  ],
+  "google_rating": 4,
+  "google_rating_count": 7,
+  "google_thumbnail": "http://books.google.com/books/publisher/content?id=uyr8BAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73E10hl1DhSA2c23kJgUO6Mh4llwLpNK6nMEL3to79LKH-GQ1bAIOgr8jm7zLhFvwBAsRmZo37uhTvcc_Ojr6eoXeBLWPFZKVMsKXJPWBG342DdajP1I0P-GGjcV9oOxFdA6I6R&source=gbs_api",
+  "google_cover": "http://books.google.com/books/publisher/content?id=uyr8BAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE72PFZH1Ci_yV_H7Z_UbeWH3NFOSKfZLGZ-5psD7zhywwe2tNlrUO1OyhsbV_EIm7nzWO_NxTxybOOQtK2uKOE-svzYvtp-0z_Vqowskr3WJ0xkHRUhS_DCxoRLgtgkKz0007rsi&source=gbs_api",
+  "language": "en",
+  "maturity_rating": "NOT_MATURE",
+  "preview_link": "http://books.google.co.in/books?id=uyr8BAAAQBAJ&hl=&source=gbs_api",
+  "epub_available": true,
+  "epub_link": "http://books.google.co.in/books/download/1984-sample-epub.acsm?id=uyr8BAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
+  "pdf_available": true,
+  "pdf_link": "http://books.google.co.in/books/download/1984-sample-pdf.acsm?id=uyr8BAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api",
+  "integrated_at": "2025-03-02T13:04:54.851613",
+  "data_sources": [
+    "google_books"
+  ],
+  "reviews": [],
+  "description": "<p>George Orwell's dystopian masterpiece, <i>Nineteen Eighty-Four </i>is perhaps the most pervasively influential book of the twentieth century, making famous Big Brother, newspeak and Room 101.</p><p> </p><p>'Who controls the past controls the future: who controls the present controls the past'</p>",
+  "genres": [
+    "Fiction / Dystopian",
+    "Fiction / Science Fiction / General"
+  ],
+  "analysis_text": "Book Description: <p>George Orwell's dystopian masterpiece, <i>Nineteen Eighty-Four </i>is perhaps the most pervasively influential book of the twentieth century, making famous Big Brother, newspeak and Room 101.</p><p> </p><p>'Who controls the past controls the future: who controls the present controls the past'</p>"
+}
