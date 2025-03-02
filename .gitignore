@@ -1,4 +1,3 @@
-
 # Environment variables
 .env
 .env.*
@@ -36,6 +35,10 @@ venv/
 ENV/
 env/
 moodreads/
+.moodreads-env/
+.moodreads-env/bin/*
+.moodreads-env/include/
+.moodreads-env/lib/
 
 # IDE
 .idea/
@@ -51,4 +54,14 @@ mongodb_data/
 .coverage
 coverage.xml
 htmlcov/
+
+# Cache files
+cache/
+cache/goodreads/
+cache/emotional_analysis/
+
+# Progress files
+*_scraping_progress_*.json
+test_scraping_progress_*.json
+production_scraping_progress_*.json
 
