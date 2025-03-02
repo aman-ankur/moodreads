@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodReads - Find Books Based on Your Mood</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MoodReads</h1>
+            <p class="subtitle">Discover books that match your emotional state</p>
+        </header>
+        
+        <div class="search-container">
+            <h2>How are you feeling today?</h2>
+            <p>Enter a mood or emotion to find books that match your current emotional state.</p>
+            
+            <form action="/recommend" method="post" class="search-form">
+                <div class="input-group">
+                    <label for="mood">Your Mood</label>
+                    <input type="text" id="mood" name="mood" placeholder="e.g., happy, melancholic, inspired" required>
+                </div>
+                
+                <button type="submit">Find Books</button>
+            </form>
+            
+            <div class="mt-6 text-center">
+                <p>Looking for more detailed recommendations?</p>
+                <a href="/advanced" class="inline-block mt-2 px-4 py-2 bg-button-pink text-white rounded-md hover:bg-button-pink-dark transition-colors">
+                    Try Advanced Recommendations
+                </a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card">
+                    <h3>Mood-Based Recommendations</h3>
+                    <p>Find books that match your current emotional state, whether you're feeling happy, sad, inspired, or anything in between.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Advanced Emotional Analysis</h3>
+                    <p>Our system analyzes books for their emotional content, creating detailed profiles that capture the nuanced feelings each book evokes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Personalized Experience</h3>
+                    <p>Save your favorite books and get recommendations tailored to your reading preferences and emotional journey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MoodReads. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,155 @@
+[
+  {
+    "title": "Unknown Title",
+    "author": "Harper Lee",
+    "cover_url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1612238791i/56916837.jpg",
+    "isbn": null,
+    "description": "One of the best-loved stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable coming-of-age tale in a South poisoned by virulent prejudice, it views a world of great beauty and savage iniquities through the eyes of a young girl, as her father — a crusading local lawyer — risks everything to defend a black man unjustly accused of a terrible crime.",
+    "genres": [
+      "Historical Fiction",
+      "Fiction",
+      "Literature",
+      "Historical",
+      "Young Adult",
+      "School",
+      "Read For School"
+    ],
+    "avg_rating": 4.26,
+    "ratings_count": 0,
+    "published_date": null,
+    "page_count": null,
+    "goodreads_url": "https://www.goodreads.com/book/show/56916837-to-kill-a-mockingbird?from_search=true&from_srp=true&qid=YkkBg9j0kw&rank=1",
+    "scrape_date": "2025-03-02T01:17:01.124947",
+    "reviews": [],
+    "google_books_id": "OQR4BgAAQBAJ",
+    "google_books_link": "http://books.google.co.in/books?id=OQR4BgAAQBAJ&dq=Unknown+Title+Harper+Lee&hl=&source=gbs_api",
+    "emotional_profile": {
+      "primary_emotions": [
+        {
+          "emotion": "Disillusionment",
+          "intensity": 8.0
+        },
+        {
+          "emotion": "Sadness",
+          "intensity": 7.0
+        },
+        {
+          "emotion": "Nostalgia",
+          "intensity": 6.0
+        },
+        {
+          "emotion": "wonder",
+          "intensity": 5.6
+        },
+        {
+          "emotion": "curiosity",
+          "intensity": 5.6
+        },
+        {
+          "emotion": "reflection",
+          "intensity": 5.6
+        },
+        {
+          "emotion": "neutral",
+          "intensity": 5.0
+        },
+        {
+          "emotion": "satisfaction",
+          "intensity": 4.8
+        },
+        {
+          "emotion": "melancholy",
+          "intensity": 4.0
+        },
+        {
+          "emotion": "tension",
+          "intensity": 3.2
+        }
+      ],
+      "emotional_arc": {
+        "beginning": [
+          "neutral",
+          "A",
+          "n",
+          "t",
+          "i",
+          "c",
+          "p",
+          "a",
+          "o",
+          " ",
+          "d",
+          "s",
+          "l",
+          "g",
+          "f",
+          "r",
+          "e",
+          "u",
+          "h",
+          "m"
+        ],
+        "middle": [
+          "neutral",
+          "D",
+          "i",
+          "s",
+          "l",
+          "u",
+          "o",
+          "n",
+          "m",
+          "e",
+          "t",
+          " ",
+          "a",
+          "d",
+          "r",
+          "b",
+          "g",
+          "h",
+          "v"
+        ],
+        "end": [
+          "neutral",
+          "W",
+          "i",
+          "s",
+          "d",
+          "o",
+          "m",
+          ",",
+          " ",
+          "g",
+          "r",
+          "w",
+          "t",
+          "h",
+          "a",
+          "n",
+          "b",
+          "e",
+          "c",
+          "p",
+          "f"
+        ]
+      },
+      "unexpected_emotions": [
+        "Disillusionment",
+        "Sadness"
+      ],
+      "lasting_impact": "Unknown",
+      "emotional_keywords": [
+        "disturbing truths",
+        "values and assumptions thrown into doubt",
+        "wisdom",
+        "bittersweet",
+        "painful yet necessary transition",
+        "humanity",
+        "passion"
+      ],
+      "overall_emotional_profile": "Neutral emotional profile"
+    },
+    "created_at": "2025-03-02T01:17:13.534817",
+    "last_updated": "2025-03-02T01:17:13.534817",
+    "_id": 
