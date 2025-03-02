@@ -11,6 +11,8 @@ import sys
 import os
 import json
 import time
+import signal
+import atexit
 from datetime import datetime
 from pathlib import Path
 
@@ -30,6 +32,24 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 # Import the advanced scraper
 from scripts.scrape_books import AdvancedBookScraper
+from moodreads.analysis.vector_embeddings import VectorEmbeddingStore
+
+# Global reference to the vector embedding store
+vector_store = None
+
+def save_mappings_on_exit():
+    """Save emotion mappings when the script exits."""
+    global vector_store
+    if vector_store:
+        logger.info("Saving emotion mappings before exit...")
+        vector_store.save_mappings()
+        logger.info("Emotion mappings saved.")
+
+def signal_handler(sig, frame):
+    """Handle signals like CTRL+C to ensure clean exit."""
+    logger.info(f"Received signal {sig}, exiting gracefully...")
+    save_mappings_on_exit()
+    sys.exit(0)
 
 def test_scraper(category, num_books, db_name, timeout=300, skip_analysis=False):
     """
@@ -42,12 +62,22 @@ def test_scraper(category, num_books, db_name, timeout=300, skip_analysis=False)
         timeout: Maximum time in seconds to allow for processing a single book
         skip_analysis: Whether to skip emotional analysis (faster testing)
     """
+    global vector_store
+    
     try:
         # Create logs directory if it doesn't exist
         Path("logs").mkdir(exist_ok=True)
         
         logger.info(f"Testing advanced scraper with category: {category}, num_books: {num_books}, db_name: {db_name}")
         logger.info(f"Timeout: {timeout}s, Skip analysis: {skip_analysis}")
+        
+        # Initialize the vector embedding store for emotion mappings
+        vector_store = VectorEmbeddingStore()
+        
+        # Register exit handlers to save mappings
+        atexit.register(save_mappings_on_exit)
+        signal.signal(signal.SIGINT, signal_handler)
+        signal.signal(signal.SIGTERM, signal_handler)
         
         # Initialize the scraper with skip_analysis option
         scraper = AdvancedBookScraper(
@@ -93,6 +123,9 @@ def test_scraper(category, num_books, db_name, timeout=300, skip_analysis=False)
                 continue
         
         logger.info("Test completed successfully")
+        
+        # Save mappings at the end
+        save_mappings_on_exit()
         
     except Exception as e:
         logger.error(f"Error during test: {str(e)}")
