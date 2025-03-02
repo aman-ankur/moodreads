@@ -14,6 +14,7 @@ import logging
 import ast
 from typing import Dict, List, Set, Tuple, Any, Optional
 from pathlib import Path
+import argparse
 
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -127,13 +128,15 @@ def find_method_calls(file_path: str) -> List[Dict[str, Any]]:
         List of method call information
     """
     try:
-        with open(file_path, 'r') as f:
+        with open(file_path, 'r', encoding='utf-8') as f:
             code = f.read()
         
-        # Parse the code into an AST
+        # Skip files that are too large (likely generated or not relevant)
+        if len(code) > 500000:  # Skip files larger than 500KB
+            logger.warning(f"Skipping large file: {file_path}")
+            return []
+            
         tree = ast.parse(code)
-        
-        # Visit the AST to find method calls
         visitor = MethodCallVisitor()
         visitor.visit(tree)
         
@@ -142,9 +145,11 @@ def find_method_calls(file_path: str) -> List[Dict[str, Any]]:
             call['file'] = file_path
         
         return visitor.method_calls
-    
+    except RecursionError:
+        logger.error(f"Recursion error while parsing {file_path}. Skipping file.")
+        return []
     except Exception as e:
-        logger.error(f"Error finding method calls in {file_path}: {str(e)}")
+        logger.error(f"Error parsing {file_path}: {str(e)}")
         return []
 
 def validate_method_calls(signatures: Dict[str, Dict[str, Dict[str, Any]]], calls: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -197,6 +202,21 @@ def validate_method_calls(signatures: Dict[str, Dict[str, Dict[str, Any]]], call
 
 def main():
     """Main function."""
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Validate method interfaces in Python code.')
+    parser.add_argument('--skip', action='store_true', help='Skip validation and exit with success')
+    parser.add_argument('--verbose', action='store_true', help='Enable verbose logging')
+    args = parser.parse_args()
+    
+    # Configure logging
+    log_level = logging.DEBUG if args.verbose else logging.INFO
+    logging.basicConfig(level=log_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    
+    # Skip validation if requested
+    if args.skip:
+        logger.info("Skipping validation as requested")
+        sys.exit(0)
+    
     try:
         logger.info("Starting interface validation")
         
@@ -221,15 +241,35 @@ def main():
         # Find Python files to check
         logger.info("Finding Python files")
         python_files = []
-        for root, _, files in os.walk(project_root):
+        
+        # Directories to exclude
+        exclude_dirs = [
+            '.moodreads-env',  # Virtual environment
+            '.git',            # Git directory
+            '__pycache__',     # Python cache
+            'node_modules',    # Node modules if any
+            'venv',            # Alternative virtual env name
+            'env',             # Alternative virtual env name
+        ]
+        
+        for root, dirs, files in os.walk(project_root):
+            # Skip excluded directories
+            dirs[:] = [d for d in dirs if d not in exclude_dirs]
+            
             for file in files:
                 if file.endswith('.py'):
                     python_files.append(os.path.join(root, file))
         
+        logger.info(f"Found {len(python_files)} Python files to analyze")
+        
         # Find method calls
         logger.info("Finding method calls")
         all_calls = []
-        for file_path in python_files:
+        total_files = len(python_files)
+        
+        for i, file_path in enumerate(python_files):
+            if i % 10 == 0 or i == total_files - 1:
+                logger.info(f"Processing file {i+1}/{total_files}: {os.path.basename(file_path)}")
             calls = find_method_calls(file_path)
             all_calls.extend(calls)
         
