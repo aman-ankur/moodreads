@@ -3,14 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
 import json
-from pathlib import Path
-from decouple import config
+import random
 import logging
 import traceback
+from pathlib import Path
 
-from moodreads.analysis.claude import EmotionalAnalyzer
-from moodreads.recommender.engine import RecommendationEngine
-from moodreads.database.mongodb import MongoDBClient
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -23,10 +23,51 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize components
-analyzer = EmotionalAnalyzer(use_cache=True)
-recommender = RecommendationEngine()
-db = MongoDBClient()
+# Mock data for recommendations
+SAMPLE_BOOKS = [
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "isbn": "9780061120084",
+        "url": "https://openlibrary.org/books/OL22172199M"
+    },
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "isbn": "9780451524935",
+        "url": "https://openlibrary.org/books/OL7360734M"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "isbn": "9780743273565",
+        "url": "https://openlibrary.org/books/OL7318592M"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "isbn": "9780141439518",
+        "url": "https://openlibrary.org/books/OL8327968M"
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "isbn": "9780316769488",
+        "url": "https://openlibrary.org/books/OL7361409M"
+    },
+    {
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "isbn": "9780060850524",
+        "url": "https://openlibrary.org/books/OL7941080M"
+    },
+    {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "isbn": "9780618260300",
+        "url": "https://openlibrary.org/books/OL7318408M"
+    }
+]
 
 class Book(BaseModel):
     id: int
@@ -51,6 +92,21 @@ def transform_book_data(book: dict, score: float) -> Book:
         matchExplanation=f"This book matches your emotional state with a {score:.0%} confidence level."
     )
 
+def get_mock_recommendations(mood: str, query: str = None, limit: int = 5):
+    """Generate mock recommendations based on mood and query."""
+    # Shuffle the sample books to simulate different recommendations
+    books = SAMPLE_BOOKS.copy()
+    random.shuffle(books)
+    
+    # Generate random scores between 0.7 and 0.95
+    scores = [random.uniform(0.7, 0.95) for _ in range(len(books))]
+    
+    # Sort by score in descending order
+    recommendations = sorted(zip(books, scores), key=lambda x: x[1], reverse=True)
+    
+    # Return the top N recommendations
+    return recommendations[:limit]
+
 @app.post("/api/recommendations", response_model=List[Book])
 async def get_recommendations(request: MoodRequest):
     """Get book recommendations based on mood."""
@@ -58,25 +114,11 @@ async def get_recommendations(request: MoodRequest):
         # Use query if provided, otherwise use mood
         query_text = request.query or request.mood
         
-        # Analyze the emotional query
-        try:
-            emotional_profile, _ = analyzer.analyze(request.mood)
-        except Exception as e:
-            logging.error(f"Emotional analysis failed: {str(e)}")
-            # Use default emotional profile as fallback
-            emotional_profile = {
-                'joy': 0.5,
-                'sadness': 0.5,
-                'tension': 0.5,
-                'comfort': 0.5,
-                'inspiration': 0.5,
-                'melancholy': 0.5,
-                'hope': 0.5
-            }
+        logger.info(f"Received recommendation request for mood: {request.mood}, query: {query_text}")
         
-        # Get recommendations
-        recommendations = recommender.get_recommendations(
-            emotional_profile=emotional_profile,
+        # Get mock recommendations
+        recommendations = get_mock_recommendations(
+            mood=request.mood,
             query=query_text,
             limit=5
         )
@@ -91,9 +133,9 @@ async def get_recommendations(request: MoodRequest):
         ]
         
     except Exception as e:
-        logging.error(f"Recommendation error: {str(e)}")
-        logging.error(f"Request data: {request.dict()}")
-        logging.error(f"Traceback: {traceback.format_exc()}")
+        logger.error(f"Recommendation error: {str(e)}")
+        logger.error(f"Request data: {request.dict()}")
+        logger.error(f"Traceback: {traceback.format_exc()}")
         raise HTTPException(
             status_code=500,
             detail="Failed to get recommendations. Please try again."
